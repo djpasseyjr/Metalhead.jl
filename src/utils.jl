@@ -24,6 +24,8 @@ end
 load_img(im::AbstractMatrix{<:Color}) = im
 load_img(str::AbstractString) = load(str)
 load_img(val::ValidationImage) = load_img(val.img)
+load_img(test::TestingImage) = load_img(test.img)
+load_img(test::TrainingImage) = load_img(test.img)
 
 # Resize an image such that its smallest dimension is the given length
 function resize_smallest_dimension(im, len)

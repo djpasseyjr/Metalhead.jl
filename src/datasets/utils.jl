@@ -14,6 +14,13 @@ struct ValData{T<:DataSet} <: AbstractVector{ValidationImage}
 end
 valimgs(set::DataSet) = ValData(set)
 
+struct TestingImage
+    set::Type{<:DataSet}
+    idx::Int
+    img
+    ground_truth::ObjectClass
+end
+
 struct TestData{T<:DataSet} <: AbstractVector{Any}
     set::T
 end
